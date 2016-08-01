@@ -1,0 +1,76 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AVOSCloud (3.3.3)
+  - BaiduMapKit (3.0.0)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - HyphenateSDK (3.1.4)
+  - MJRefresh (3.1.6)
+  - MOBFoundation (2.0.1)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - ShareSDK3 (3.3.2):
+    - ShareSDK3/ShareSDK (= 3.3.2)
+  - ShareSDK3/ShareSDK (3.3.2)
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.3.2)
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.3.2)
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.3.2)
+  - ShareSDK3/ShareSDKUI (3.3.2)
+  - SSZipArchive (1.2)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - AVOSCloud (~> 3.3.3)
+  - BaiduMapKit
+  - FMDB (~> 2.6.2)
+  - HyphenateSDK (from `https://github.com/easemob/hyphenate-cocoapods.git`)
+  - MJRefresh (~> 3.1.6)
+  - MOBFoundation
+  - SDWebImage (~> 3.8.1)
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
+  - SSZipArchive (~> 1.2)
+
+EXTERNAL SOURCES:
+  HyphenateSDK:
+    :git: https://github.com/easemob/hyphenate-cocoapods.git
+
+CHECKOUT OPTIONS:
+  HyphenateSDK:
+    :commit: 60f3ba7b8ba3f467339a2104e4a1cc2513a6b5eb
+    :git: https://github.com/easemob/hyphenate-cocoapods.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AVOSCloud: dcd8a24c219971400146fe09638d218cfc8bb7f1
+  BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HyphenateSDK: 8c0a3610dc9f26fae8b38be52f219f10ef7a09a8
+  MJRefresh: 5c69f11e8bde0664e15326d2e61f61e103c6545f
+  MOBFoundation: a42168392e216fc56cbcbdfc3d5dcb3bbce5ef87
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  ShareSDK3: c76cb96eb38e079952b8157071486d945faa2df2
+  SSZipArchive: 251093c65f98d6ea282c50bc404bfa631d9fd721
+
+PODFILE CHECKSUM: e15cdd7cd5cdf0841dc5a0d51c91707dd316b55a
+
+COCOAPODS: 1.0.1

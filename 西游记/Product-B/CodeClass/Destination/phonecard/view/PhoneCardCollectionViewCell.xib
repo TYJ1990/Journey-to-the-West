@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhoneCardCell" id="gTV-IL-0wX" customClass="PhoneCardCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="133" height="143"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="133" height="143"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jq4-Rs-6aH">
+                        <rect key="frame" x="0.0" y="0.0" width="133" height="123"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7a-Ja-ARo">
+                        <rect key="frame" x="0.0" y="123" width="133" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="y7a-Ja-ARo" firstAttribute="top" secondItem="Jq4-Rs-6aH" secondAttribute="bottom" id="00W-aY-CJC"/>
+                <constraint firstItem="y7a-Ja-ARo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="83Z-Pw-hgh"/>
+                <constraint firstAttribute="bottom" secondItem="y7a-Ja-ARo" secondAttribute="bottom" id="VeI-fl-m02"/>
+                <constraint firstItem="Jq4-Rs-6aH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vmw-xa-ug1"/>
+                <constraint firstItem="Jq4-Rs-6aH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Zug-pb-oig"/>
+                <constraint firstAttribute="bottom" secondItem="Jq4-Rs-6aH" secondAttribute="bottom" constant="20" id="d7S-HS-8eq"/>
+                <constraint firstAttribute="trailing" secondItem="Jq4-Rs-6aH" secondAttribute="trailing" id="ohv-wi-MIU"/>
+                <constraint firstAttribute="trailing" secondItem="y7a-Ja-ARo" secondAttribute="trailing" id="sbV-Pb-56x"/>
+            </constraints>
+            <size key="customSize" width="133" height="143"/>
+            <connections>
+                <outlet property="imageV" destination="Jq4-Rs-6aH" id="jot-4o-7MC"/>
+                <outlet property="titleL" destination="y7a-Ja-ARo" id="waQ-J4-wwn"/>
+            </connections>
+            <point key="canvasLocation" x="216.5" y="333.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

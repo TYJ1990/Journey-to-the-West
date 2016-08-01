@@ -1,0 +1,137 @@
+//
+//  PrefixHeader.pch
+//  Product-B
+//
+//  Created by lanou on 16/7/11.
+//  Copyright © 2016年 lanou. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#pragma mark ---工具类
+#import "UIView+TWFrame.h"
+#import "RequestManager.h"
+#import <UIImageView+WebCache.h>
+#import "CycleScrollView.h"
+#import <AFNetworking.h>
+#import <MJRefresh.h>
+#import "AdjustHeight.h"
+#import <SSZipArchive.h>
+#import <FMDB.h>
+#import "FeHourGlass.h"
+// 百度地图
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+//SDK头文件
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "WXApi.h"
+#import "WeiboSDK.h"
+
+#import <HyphenateSDK/EMSDK.h>
+#import <EMSDK.h>
+
+#import <AVOSCloud/AVOSCloud.h>
+
+#pragma mark ---接口类
+#define Destination @"http://open.qyer.com/qyer/footprint/continent_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&lat=40.03623447101837&lon=116.363814398621&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//推荐页面，其他
+#define RecoumendUrl @"http://open.qyer.com/qyer/recommands/entry?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&lat=40.03623104039519&lon=116.3638251674019&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+#define RecoumendUrl1 @"http://open.qyer.com/qyer/recommands/trip?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=10&lat=40.03623104039519&lon=116.3638251674019&page=%d&track_app_channel=%@"
+#define RecoumendUrl2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&type=index&v=1"
+//折扣详情
+#define DISCOUNTDETAIL1 @"http://open.qyer.com/lastminute/get_detail?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=%@%@"
+#define DISCOUNTDETAIL2 @"&lat=40.03616355444207&lon=116.3638803295888&page=1&source=QYDiscountViewController&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//查看全部专题锦囊
+#define SPECIALALL @"http://open.qyer.com/qyer/special/topic/special_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&lat=40.03623116203175&lon=116.363819066288&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+#define SPECIALALL1 @"http://open.qyer.com/qyer/special/topic/special_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&lat=40.03623116203175&lon=116.363819066288&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel=%@"
+#define SPECIALALL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+//看锦囊最新
+#define LATEST @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=999999&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//最新详细锦囊
+#define LATESTDETAIL @"http://open.qyer.com/qyer/guide/detail?client_id=qyer_android&client_secret=9fcaae8aefc4f9ac4915&v=1&track_deviceid=863151029008023&track_app_version=6.8.1&track_app_channel=qq&track_device_info=mx3&track_os=Android4.4.4&app_installtime=1446538281848&lat=40.038026&lon=116.370336&id=%@"
+//看锦囊亚洲
+#define ASIA @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=657&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//看锦囊欧洲
+#define EUROPE @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=658&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//看锦囊南美洲
+#define SOUTHAMERICA @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=660&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//看锦囊北美洲
+#define NORTHAMERICA @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=659&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//看锦囊大洋洲
+#define OCEANIA @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=667&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//看锦囊非洲
+#define AFRICA @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=668&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//看锦囊专题锦囊
+#define SPECIAL @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=669&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+//看锦囊中国内地：
+#define CHINESE @"http://open.qyer.com/qyer/guide/channel_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&id=2534&lat=40.03616355444207&lon=116.3638803295888&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+#pragma mark --- community界面 ---
+// community界面
+#define CommunityURL @"http://open.qyer.com/qyer/bbs/entry?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&lat=40.03623447101837&lon=116.363814398621&page=1&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&v=1"
+
+// 问答
+#define AnswerURL @"http://open.qyer.com/qyer/ask/question/get_new?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&lat=40.03355031999999&lon=116.36718922&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&qid=908516&track_app_channel="
+#define AnswerURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+// 结伴
+#define CompanyURL @"http://open.qyer.com/qyer/company/default_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&lat=40.03623532599696&lon=116.363827305307&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d"
+#define CompanyURL2 @"&track_app_channel=App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+// 洲下个界面的最新
+#define DeltaLatestURL @"http://open.qyer.com/qyer/bbs/forum_thread_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&delcache=1&forum_id=%@&forum_type=new&lat=40.03623269467762&lon=116.3638221383681&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel="
+#define DeltaLatestURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+// 洲下个界面攻略全部：
+#define DeltaStrategyURL @"http://open.qyer.com/qyer/bbs/forum_thread_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&delcache=1&forum_id=%@"
+#define DeltaStrategyURL2 @"&forum_type=1%2C2%2C6&lat=40.03622574273529&lon=116.363834514835&oauth_token=2c8a27f98da55363b7f5ca09940dc14c"
+#define DeltaStrategyURL3 @"&page=%d&track_app_channel="
+#define DeltaStrategyURL4 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+
+// 下个界面攻略精华
+#define DeltaStrategyCreamURL @"http://open.qyer.com/qyer/bbs/forum_thread_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&delcache=1&forum_id=%@&forum_type=digest&lat=40.03622574273529&lon=116.363834514835&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel="
+#define DeltaStrategyCreamURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+// 下个界面攻略游记
+#define DeltaStrategyTravelURL @"http://open.qyer.com/qyer/bbs/forum_thread_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&delcache=1&forum_id=%@&forum_type=1&lat=40.03622574273529&lon=116.363834514835&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel="
+#define DeltaStrategyTravelURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+// 下个界面攻略IN
+#define DeltaStrategyInURL @"http://open.qyer.com/qyer/bbs/forum_thread_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&delcache=1&forum_id=%@&forum_type=2&lat=40.03622574273529&lon=116.363834514835&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel="
+#define DeltaStrategyInURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+// 下个界面结伴
+#define DeltaCompanyURL @"http://open.qyer.com/qyer/company/together_list_by_fid?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=10&fid=%@&lat=40.03622574273529&lon=116.363834514835&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel="
+#define DeltaCompanyURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+// 下个界面问答
+#define DeltaAnswerURL @"http://open.qyer.com/qyer/ask/question/list_by_fid?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&fid=%@&lat=40.0362010702955&lon=116.3638132792015&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel="
+#define DeltaAnswerURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+// 下个界面转让
+#define DeltaTransferURL @"http://open.qyer.com/qyer/bbs/forum_thread_list?client_id=qyer_ios&client_secret=cd254439208ab658ddf9&count=20&delcache=1&forum_id=%@&forum_type=4&lat=40.0362010702955&lon=116.3638132792015&oauth_token=2c8a27f98da55363b7f5ca09940dc14c&page=%d&track_app_channel="
+#define DeltaTransferURL2 @"App%2520Store&track_app_version=6.8&track_device_info=iPhone7%2C1&track_deviceid=7B6FA080-F9FB-44C1-B932-401CD69CD5D2&track_os=ios%25209.1&track_user_id=6971539&v=1"
+
+
+#pragma mark ---宏定义类
+
+#define PKCOLOR(R,B,G) [UIColor colorWithRed:(R)/255.0 green:(B)/255.0 blue:(G)/255.0 alpha:1.0]
+#define kPlacehodeImage [UIImage imageNamed:@"33.jpg"]
+
+
+
+
+#endif /* PrefixHeader_pch */
